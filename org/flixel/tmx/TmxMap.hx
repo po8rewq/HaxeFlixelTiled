@@ -21,9 +21,9 @@ class TmxMap
 	//public var fullHeight : Int;
 
 	public var properties   : TmxPropertySet;
-	public var tilesets     : Hash<TmxTileSet>;
-	public var layers       : Hash<TmxLayer>;
-	public var objectGroups : Hash<TmxObjectGroup>;
+	public var tilesets     : Map<String, TmxTileSet>;
+	public var layers       : Map<String, TmxLayer>;
+	public var objectGroups : Map<String, TmxObjectGroup>;
 
     public function new(data: Dynamic)
     {
@@ -36,9 +36,9 @@ class TmxMap
 //		else if (Std.is(data, ByteArray)) source = new Fast(Xml.parse(data.toString()));
 		else throw "Unknown TMX map format";
         
-		tilesets = new Hash<TmxTileSet>();
-		layers = new Hash<TmxLayer>();
-		objectGroups = new Hash<TmxObjectGroup>();
+		tilesets = new Map<String, TmxTileSet>();
+		layers = new Map<String, TmxLayer>();
+		objectGroups = new Map<String, TmxObjectGroup>();
 		
 		source = source.node.map;
 		
