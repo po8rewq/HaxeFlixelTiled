@@ -1,0 +1,8 @@
+<project name="flixeltiled" url="https://github.com/floppya/HaxeFlixelTiled/tree/haxe3/" license="MIT">
+    <user name="floppya"/>
+    <tag v="flixel"/>
+    <tag v="tiled"/>
+	<tag v="game"/>
+    <description>FlxTiled port. Loads Tiled maps for Flixel</description>
+    <version name="1.0">Initial release, everything is working correctly</version>
+</project>

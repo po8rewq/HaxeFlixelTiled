@@ -46,7 +46,8 @@ class TmxLayer
 		if(data != null)
 		{
 			var chunk:String = "";
-			switch(data.att.encoding)
+			var encoding:String = data.has.encoding ? data.att.encoding : '';
+			switch(encoding)
 			{
 				case "base64":
 					chunk = data.innerData;
