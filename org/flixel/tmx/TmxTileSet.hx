@@ -13,7 +13,7 @@ import haxe.xml.Fast;
 class TmxTileSet
 {
 	private var _tileProps:Array<TmxPropertySet>;
-	private var _image:BitmapData;
+	public var image:BitmapData;
 	
 	public var firstGID:Int;
 	public var name:String;
@@ -79,19 +79,14 @@ class TmxTileSet
 		}
 	}
 	
-	public var image(getImage, setImage):BitmapData;
-	private function getImage():BitmapData
+	public function set_image(v:BitmapData):BitmapData
 	{
-		return _image;
-	}
-	public function setImage(v:BitmapData):BitmapData
-	{
-		_image = v;
+		image = v;
 		//TODO: consider spacing & margin
 		numCols = Math.floor(v.width / tileWidth);
 		numRows = Math.floor(v.height / tileHeight);
 		numTiles = numRows * numCols;
-		return _image;
+		return image;
 	}
 	
 	public function hasGid(gid:Int):Bool
